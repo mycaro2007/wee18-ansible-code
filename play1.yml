@@ -1,0 +1,29 @@
+- hosts: all
+  
+  gather_facts: true
+  ignore_errors: true
+  vars:
+    user_name: serge2029
+    group_name: devops
+  vars_files:
+    - variable.yml  # Ensure this file name is correct
+
+  tasks:
+    - name: Check the time
+      command: gfghfhghghg
+
+    - name: Create user serge
+      user:
+        name: "{{ user_name }}"
+        comment: Serge admin
+
+    - name: Create group
+      group:
+        name: "{{ group_name }}"
+        state: present
+        become: true
+
+    - name: Install package
+      package:
+        name: "{{ pkg_name }}"  # Ensure this variable is defined in your vars or vars_files
+        state: present
