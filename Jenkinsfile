@@ -18,7 +18,7 @@ pipeline {
             steps {
                 // Ensure the zip file path is correct and accessible from the root of the workspace
                 // Pushing the code to Jfrog Artifactory
-                sh 'curl -uadmin:AP3oJAo4EgQpQnCMyCyepW1iVFf -T Week18-Ansible-Code/ansible-codes.zip "http://54.89.215.83:8081/artifactory/Jenkins-Ansible-code/ansible-codes.zip"'
+                sh 'curl -uadmin:AP3oJAo4EgQpQnCMyCyepW1iVFf -T Week18-Ansible-Code/week18-ansible-codes.zip "http://54.89.215.83:8081/artifactory/Jenkins-Ansible-code/ansible-codes.zip"'
             }
         }
     }
