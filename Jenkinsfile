@@ -4,14 +4,11 @@ pipeline {
     stages {
         stage('Zip Ansible Code') {
             steps {
-                script {
-                    // Change to the directory where your Ansible code is located
-                    dir('Week18-Ansible-Code') {
+            
                         // Zip the contents of the Ansible directory, excluding the Jenkinsfile
                         sh 'zip -r ansible-codes.zip week18-ansible-code -x Jenkinsfile'
-                    }
+                    
                 }
-            }
         }
 
         stage('Upload to JFrog Artifactory') {
