@@ -6,7 +6,7 @@ pipeline {
             steps {
             
                         // Zip the contents of the Ansible directory, excluding the Jenkinsfile
-                        sh 'zip -r ansible-codes.zip * -x Jenkinsfile'
+                        sh 'zip -r ansible-codes.zip *-x Jenkinsfile'
                     
                 }
         }
