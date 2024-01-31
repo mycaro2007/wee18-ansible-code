@@ -10,7 +10,7 @@
 
   tasks:
     - name: Check the time
-      command: gfghfhghghg
+      command: uptime
 
     - name: Create user serge
       user:
