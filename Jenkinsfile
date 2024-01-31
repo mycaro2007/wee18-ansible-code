@@ -12,7 +12,7 @@ pipeline {
         stage('Upload to JFrog Artifactory') {
             steps {
                 // Pushing the code to Jfrog Artifactory
-                sh 'curl -uadmin:AP3oJAo4EgQpQnCMyCyepW1iVFf -T ansible-codes.zip "http://54.89.215.83:8081/artifactory/Jenkins-Ansible-code/ansible-codes.zip"'
+                sh 'curl -uadmin:AP3oJAo4EgQpQnCMyCyepW1iVFf -T ansible-codes.zip "http://3.83.42.163:8081/artifactory/Jenkins-Ansible-code/ansible-codes.zip"'
             }
         }
 
@@ -22,7 +22,7 @@ pipeline {
             }
             steps {
                 // Download the zipped Ansible code from JFrog Artifactory
-                sh 'curl -uadmin:AP3oJAo4EgQpQnCMyCyepW1iVFf -O "http://54.89.215.83:8081/artifactory/Jenkins-Ansible-code/ansible-codes.zip"'
+                sh 'curl -uadmin:AP3oJAo4EgQpQnCMyCyepW1iVFf -O "http://3.83.42.163:8081/artifactory/Jenkins-Ansible-code/ansible-codes.zip"'
 
             }
         }
