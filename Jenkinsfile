@@ -34,5 +34,21 @@ pipeline {
                 sh 'ssh ec2-user@3.82.41.54 "unzip -o /home/ec2-user/ansible-codes.zip -d /home/ec2-user/ansible-dev/"'
             }
         }
+
+        stage('Run playbook') {
+            agent {
+                label 'ansible1'
+            }
+            steps {
+                script {
+                    // Unzip ansible-codes.zip
+                    sh 'unzip -o ansible-codes.zip'
+                    // Run ansible-playbook from the correct directory
+                    dir('ansible-codes') {
+                        sh 'ansible-playbook -i /home/ec2-user/ansible-dev/week17-ansible-code/inventory.yml /home/ec2-user/ansible-dev/week17-ansible-code/play1.yml'
+                    }
+                }
+            }
+        }
     }
 }
