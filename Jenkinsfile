@@ -5,7 +5,7 @@ pipeline {
         stage('Zip Ansible Code') {
             steps {
                 // Zip the contents of the Ansible directory, excluding the Jenkinsfile
-                sh 'zip -r ansible-codes.zip wee18-ansible-code-x Jenkinsfile'
+                sh 'zip -r ansible-codes.zip -x Jenkinsfile'
             }
         }
 
@@ -36,7 +36,7 @@ pipeline {
                     sh 'unzip -o ansible-codes.zip'
                     // Run ansible-playbook from the correct directory
                     dir('ansible-codes') {
-                        sh 'ansible-playbook -i /home/ec2-user/ansible-dev/inventory.yml /home/ec2-user/ansible-dev/play1.yml'
+                        sh 'ansible-playbook -i /home/ec2-user/ansible-dev/inventory.yml /home/ec2-user/ansible-dev/code2.yml'
                     }
                 }
             }
